@@ -12,7 +12,14 @@ class UserModuleTest extends TestCase
     {
         $this->get('/admin/users')
             ->assertStatus(200)
-            ->assertSee('Usuarios');
+            ->assertSee('Lista de usuarios');
+    }
+
+    public function test_user_list_empty()
+    {
+        $this->get('/admin/users?empty')
+            ->assertStatus(200)
+            ->assertSee('Sin registro de usuarios');
     }
 
     public function test_user_new()
