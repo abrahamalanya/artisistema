@@ -15,4 +15,14 @@ class WelcomeModuleTest extends TestCase
     {
         $this->assertTrue(true);
     }
+
+    public function test_welcome_name()
+    {
+        $this->assertTrue(true);
+    }
+
+    public function test_welcome_name_nickname()
+    {
+        $this->assertTrue(true);
+    }
 }
