@@ -1,18 +1,26 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
-    return view('welcome');
+    return 'Bienvenido';
+});
+
+Route::get('/admin/home', function () {
+    return 'INICIO en el lado del administrador.';
+});
+
+Route::get('/admin/user/new', function () {
+    return "Nuevo usuario";
+});
+
+Route::get('/admin/user/{id}', function ($id) {
+    return "Detalle del usuario: {$id}";
+});
+
+Route::get('/admin/{name}/{nickname?}', function ($name, $nickname = null) {
+    $name = ucfirst($name);
+    if ($nickname) {
+        return  "Mi nombre es {$name} y mi apodo es {$nickname}";
+    } else {
+        return "Mi nombre es {$name}";
+    }
 });
